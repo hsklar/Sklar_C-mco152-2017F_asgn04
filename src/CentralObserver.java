@@ -3,6 +3,9 @@ import java.util.Observer;
 import java.util.ArrayList;
 
 public class CentralObserver implements Observer{
+	//The Central Observer receives the information from the Observable and stores it 
+	//in an ArrayList. Each time a new state is pushed to the Observer the InfoTemp object that
+	//contains the information is put in the Observer's ArrayList
 
 	private ArrayList <InfoTemp> info;
 	private IReportPopularVote popReport;
@@ -19,7 +22,8 @@ public class CentralObserver implements Observer{
 		this.eleReport=eleReport;
 		this.info=new ArrayList<InfoTemp>();
 	}
-
+	//Each time a new state's stats are pushed, update calls the display method to 
+	//calculate total popular and electoral votes for all the states that were already entered
 	public void update(Observable observable, Object stateObject)
 	{
 		if (stateObject instanceof InfoTemp)
@@ -43,7 +47,11 @@ public class CentralObserver implements Observer{
 		}
 		return copy;
 	}
-
+	//the display method is the only method that demonstrates the different functionality of all
+	//the Observers. The methods getPVotesDem() and getPVotesRep() are requirements of the 
+	//IReportPopular interface and skew popular vote results differently based on the class that
+	//is calling them. The same is true for the getEVotesRep() and getEVotesDem() methods of the
+	//IReportElectoralCollege interface.
 	public void display(){
 		StringBuilder line= new StringBuilder();
 		for (InfoTemp i: info){

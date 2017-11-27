@@ -2,9 +2,11 @@ import java.util.ArrayList;
 public class DemBiasPop implements IReportPopularVote{
 
 
-	//receives an array of info. Finds the array with the highest Rep. vote and ignores it by setting it to 0
+	//receives an array of info. 
+	//Finds the array with the highest Rep. vote and ignores it by setting it to 0
 
 	public int getPVotesRep(ArrayList<InfoTemp> info){
+		//first find the state with most electoral votes
 		int max=0;
 		for (int i=0; i<info.size();i++){
 			if (info.get(i).pVoteRep>max){
@@ -15,11 +17,11 @@ public class DemBiasPop implements IReportPopularVote{
 		for (InfoTemp e: info)
 		{
 			if (e.pVoteRep==max){
-				
+				//if its the state with the most votes ignore it	
 			}
 			else
-			total+=e.pVoteRep;	
-			}
+				total+=e.pVoteRep;	
+		}
 		return total;	
 	}
 

@@ -8,6 +8,7 @@ public class InfoTemp {
 	States state;
 	String legalMessage;
 
+	//the stateObject that stores the election stats for each state
 	public InfoTemp(int a, int b, int c, States d, String e){
 		this.pVoteDem=a;
 		this.pVoteRep=b;

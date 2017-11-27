@@ -1,15 +1,15 @@
 import java.util.ArrayList;
 public class DemBiasEle2 implements IReportElectoralCollege{
-	
+
 	private int demVotes;
 	private int repVotes;
-	
+
 	public DemBiasEle2(){
 		this.demVotes=0;
 		this.repVotes=0;
 	}
-	
-	//finds the state with the most electoral votes
+
+	//finds the state with the most electoral votes and adds it to the Democrat Vote
 	public void changeData(ArrayList<InfoTemp> copy){
 		this.demVotes=0;
 		this.repVotes=0;
@@ -35,7 +35,7 @@ public class DemBiasEle2 implements IReportElectoralCollege{
 			}
 		}
 	}
-	
+	//these methods must first skew the data, set the total votes for each party, and then return
 	public int getEVotesDem(ArrayList<InfoTemp>copy){
 		this.changeData(copy);
 		return demVotes;

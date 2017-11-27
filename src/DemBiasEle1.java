@@ -4,7 +4,8 @@ public class DemBiasEle1 implements IReportElectoralCollege{
 
 	@Override
 	public int getEVotesDem(ArrayList<InfoTemp> copy) {
-		//changes the data to change the 2%
+		//changes the data to switch 2% of Republican popular votes to Democrat then calculates
+		//the total of the democrat vote
 		int twoPercent=0;
 		int total=0;
 		for (InfoTemp e: copy){
@@ -20,6 +21,8 @@ public class DemBiasEle1 implements IReportElectoralCollege{
 
 	@Override
 	public int getEVotesRep(ArrayList<InfoTemp> copy) {
+		//changes the data to switch 2% of Republican popular votes to Democrat then calculates 
+		//the total of the Republican Electoral votes
 		int twoPercent=0;
 		int total=0;
 		for (InfoTemp e: copy){

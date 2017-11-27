@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 public class RepBiasPop implements IReportPopularVote{
 
+	//Reports 5% less of the total Democrat popular vote
 	public int getPVotesDem(ArrayList<InfoTemp> info){
 		int total=0;
 		for (InfoTemp e: info){
@@ -10,6 +11,7 @@ public class RepBiasPop implements IReportPopularVote{
 		return total;
 	}
 	
+	//calculates the total Republican popular vote accurately
 	public int getPVotesRep(ArrayList<InfoTemp> info){
 		int total=0;
 		for (InfoTemp e: info)
